@@ -2,7 +2,7 @@
     "name": "IMC Calculator",
     "short_name": "IMC Calc",
     "description": "Une application simple pour calculer l'IMC.",
-    "start_url": "/imc_app/index.html",
+    "start_url": "./index.html",
     "display": "standalone",
     "background_color": "#6e97ac",
     "theme_color": "#6e97ac",
