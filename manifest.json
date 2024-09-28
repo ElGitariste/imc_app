@@ -1,0 +1,23 @@
+{
+    "name": "IMC Calculator",
+    "short_name": "IMC Calc",
+    "description": "Une application simple pour calculer l'IMC.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#6e97ac",
+    "theme_color": "#6e97ac",
+    "orientation": "portrait",
+    "icons": [
+      {
+        "src": "logo.jpg",
+        "type": "image/jpg",
+        "sizes": "192x192"
+      },
+      {
+        "src": "logo.jpg",
+        "type": "image/jpg",
+        "sizes": "512x512"
+      }
+    ]
+  }
+  

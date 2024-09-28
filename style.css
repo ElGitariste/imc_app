@@ -1,0 +1,286 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #6e97ac
+}
+
+/* Box Container */
+.box {
+    width: 100%;
+    max-width: 500px; /* Limite la largeur maximale */
+    background: #fafafa;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 2px 2px 20px 5px rgba(0,0,0,0.5);
+    padding: 20px;
+    margin: 20px; /* Ajout de marges pour espacer sur petits écrans */
+}
+
+h1 {
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: bold;
+    font-size: 28px;
+    padding: 10px 0;
+}
+
+/* Contenu centré */
+.content {
+    padding: 0 20px;
+}
+
+.input, .inputH, .inputW {
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.input label, .inputH label, .inputW label {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.input input, .inputH input, .inputW input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #4f7df9;
+    width: 80%; /* Passe à 80% pour les petits écrans */
+    max-width: 250px;
+    text-align: center;
+    font-size: 22px;
+}
+
+/* Bouton Calculer */
+button.calculate {
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    color: #fff;
+    background: #6e97ac;
+    font-size: 18px;
+    border-radius: 7px;
+    padding: 12px 0;
+    width: 100%;
+    outline: none;
+    border: none;
+    transition: all 0.5s;
+}
+button.calculate:hover {
+    background: #89bdd6;
+}
+
+/* Résultats */
+.result {
+    padding: 10px 20px;
+}
+.result p {
+    font-weight: 600;
+    font-size: 20px;
+    color: #000;
+    margin-bottom: 15px;
+}
+.result #result {
+    font-size: 32px;
+    font-weight: 900;
+    color: #6e97ac;
+    background-color: #eaeaea;
+    display: inline-block;
+    padding: 7px 20px;
+    border-radius: 55px;
+    margin-bottom: 25px;
+}
+#comment {
+    color: #6e97ac;
+    font-weight: 800;
+}
+
+.comment {
+    display: none;
+    border: dashed 1px;
+    border-radius: 7px;
+    padding: 5px;
+}
+
+/* Flexbox pour les hauteurs et poids */
+.containerHW {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Pour les écrans plus larges, aligner horizontalement */
+@media (min-width: 768px) {
+    .containerHW {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Flexbox pour genre */
+.gender {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    background: #fff;
+    box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+
+/* Ajustements pour petits écrans */
+@media (max-width: 700px) {
+    .box {
+        width: 90%;
+    }
+
+    .input input, .inputH input, .inputW input {
+        font-size: 18px;
+        width: 90%; /* Augmenter la taille pour petits écrans */
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .modal-content {
+        width: 90%;
+    }
+
+    button.calculate {
+        font-size: 16px;
+    }
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 300px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: #393c76 -1px 2px 2px 1px;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.close:hover {
+    color: #d41111;
+}
+/* Progress Bar Styles */
+.progress-container {
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  margin: 20px auto;
+  max-width: 500px; /* Limite à 500px sur les grands écrans */
+  height: 30px;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: #00bfff; /* Couleur par défaut */
+  border-radius: 25px;
+  transition: width 0.5s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 700px) {
+  .progress-container {
+      max-width: 90%;
+      height: 20px; /* Réduit la hauteur sur petits écrans */
+  }
+}
+
+/* Style pour le logo */
+.logo {
+  width: 50px; /* Taille du logo, ajustable */
+  height: auto;
+  float: left; /* Aligne l'image à gauche */
+  margin-right: 15px; /* Espace entre le logo et le texte */
+  border-radius: 50%; /* Optionnel : pour arrondir le logo */
+}
+
+h1 {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: bold;
+  font-size: 28px;
+
+  color: rgba(0, 0, 0, 0.7);
+}
+.header-app{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+/* Pour garantir que le logo et le titre restent sur la même ligne
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+} */
+
+/* Réduire les marges et paddings pour les petits écrans */
+@media (max-width: 700px) {
+  .box {
+      padding: 10px; /* Réduction du padding */
+  }
+
+  h1 {
+      font-size: 24px; /* Réduire légèrement la taille du titre */
+      margin-bottom: 10px;
+  }
+
+  .input input, .inputH input, .inputW input {
+      font-size: 16px; /* Réduire la taille des champs */
+      padding: 8px;
+  }
+
+  button.calculate {
+      font-size: 16px;
+      padding: 10px; /* Réduire l'espace autour des boutons */
+  }
+}
