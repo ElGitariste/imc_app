@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/imc_app/style.css">
+    <link rel="stylesheet" href="style.css">
+
     <title>BMI Calculator</title>
-    <link rel="manifest" href="/imc_app/manifest.json">
+    <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#6e97ac">
 </head>
 <body>
@@ -15,7 +16,7 @@
     <div class="container">
         <div class="box">
           <div class="header-app">
-            <img src="/imc_app/logo.png" alt="Logo" class="logo">
+            <img src="logo.png" alt="Logo" class="logo">
             <h1>IMC Calculator </h1>
           </div>
           
@@ -82,9 +83,9 @@
 
 
     
-<script src="/imc_app/script.js">
+<script src="script.js">
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/imc_app/sw.js')  // Utilisez '/imc_app/sw.js'
+    navigator.serviceWorker.register('sw.js')  // Utilisez '/imc_app/sw.js'
     .then(function(registration) {
       console.log('Service Worker enregistré avec succès :', registration);
     })
